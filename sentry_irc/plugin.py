@@ -116,7 +116,7 @@ class IRCMessage(NotificationPlugin):
         start = time.time()
         irc = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         irc.settimeout(self.timeout)
-        irc.connect((server, port))
+        irc.connect((server, int(port)))
         if ssl_c:
             ircsock = wrap_socket(irc)
         else:
