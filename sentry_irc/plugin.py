@@ -91,7 +91,7 @@ class IRCMessage(NotificationPlugin):
             group.id,
         ]))
 
-    def notify_users(self, group, event, fail_silently=False):
+    def notify_users(self, group, event, fail_silently=False, **kwargs):
         link = self.get_group_url(group)
         message = event.message.replace('\n', ' ').replace('\r', ' ')
         if event.server_name:
